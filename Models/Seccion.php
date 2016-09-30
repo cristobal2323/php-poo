@@ -9,7 +9,7 @@
 			$this->con = new Conexion();
 		}
 		public function set($atributo, $contenido){
-			$this->atributo = $contenido;
+			$this->$atributo = $contenido;
 		}
 		public function get($atributo){
 			return $this->$atributo;
@@ -32,7 +32,7 @@
 		}
 
 		public function edit(){
-			$sql = "UPDATE FROM secciones SET nombre = '{$this->nombre}' WHERE id = '{$this->id} '";
+			$sql = "UPDATE secciones SET nombre = '{$this->nombre}' WHERE id = '{$this->id} '";
 			$this->con->consultaSimple($sql);
 		}
 

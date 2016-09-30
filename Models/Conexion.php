@@ -13,7 +13,7 @@
 			$this->con = new \mysqli($this->datos['host'],$this->datos['user'],$this->datos['pass'],$this->datos['db']);
 		}
 
-		public function consultasSimple($sql){
+		public function consultaSimple($sql){
 			$this->con->query($sql);
 		}
 
