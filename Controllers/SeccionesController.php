@@ -25,7 +25,9 @@
 				$this->secciones->set("id", $_POST['id']);
 				$this->secciones->set("nombre", $_POST['nombre']);
 				$this->secciones->edit();
-				header('Location: '. URL . "secciones");
+				//header('Location: '. URL . "secciones");
+				$dir = URL . "secciones";
+				echo '<script language = javascript> self.location = "'.$dir.'" </script>';
 			}else{
 				$this->secciones->set("id", $id);
 				$datos = $this->secciones->view();
@@ -35,7 +37,9 @@
 		public function eliminar($id){
 			$this->secciones->set("id", $id);
 			$this->secciones->delete();
-			header('Location: '. URL . "secciones");
+			//header('Location: '. URL . "secciones");
+			$dir = URL . "secciones";
+			echo '<script language = javascript> self.location = "'.$dir.'" </script>';
 		}
 	}
 ?>

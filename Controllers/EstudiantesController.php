@@ -49,7 +49,9 @@
 				$this->estudiante->set("promedio", $_POST['promedio']);
 				$this->estudiante->set("id_seccion", $_POST['id_seccion']);
 				$this->estudiante->edit();
-				header("Location: " . URL . "estudiantes");
+				//header("Location: " . URL . "estudiantes");
+				$dir = URL . "estudiantes";
+				echo '<script language = javascript> self.location = "'.$dir.'" </script>';
 			}
 		}
 		public function listarSecciones(){
@@ -64,7 +66,9 @@
 		public function eliminar($id){
 			$this->estudiante->set("id",$id);
 			$this->estudiante->delete();
-			header("Location: " . URL . "estudiantes");
+			//header("Location: " . URL . "estudiantes");
+			$dir = URL . "estudiantes";
+			echo '<script language = javascript> self.location = "'.$dir.'" </script>';
 		}
 }
 	$estudiantes = new estudiantesController();
